@@ -7,8 +7,9 @@
 3. Introduction Survey
 4. Break
 5. Intro to Coding
-6. Tutorial: Drawing with p5.js
-7. Demos, Videos, and Useful Links
+6. Pair Pattern Matching activity
+7. Tutorial: Drawing with p5.js
+8. Demos, Videos, and Useful Links
 
 ## Syllabus
 
@@ -91,6 +92,18 @@ Make an account: https://openprocessing.org/join/DC1063
 Bookmark: https://openprocessing.org/class/106677#/
 
 When creating a profile, please use your real (preferred) name. We have a large community of learners and one way we establish trust as a community is through real name usage.
+
+## Pair Pattern Matching (Lost in Translation)
+- Take 5 minutes to draw a simple pattern
+- Take another few minutes to write a set of instructions for how to draw your pattern
+- Be as specific and detailed as you can
+- I will break you into pairs
+- Exchange instructions with your partner
+- Just from the instructions, try to draw your partner’s pattern
+- Compare patterns!
+- How different/similar are they?
+- How could you modify your instructions so that the person drawing the pattern would get closer to your original design?
+
 
 #### First Sketch
 
