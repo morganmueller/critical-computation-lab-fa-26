@@ -12,14 +12,13 @@
 
 ## Syllabus
 
-- Read through the [syllabus](../readme.md): https://github.com/morganmueller/critical-computation-lab-fa-26 (and bookmark it! this is also where class notes will live!)
+- Read through the [syllabus](../readme.md): https://github.com/morganmueller/critical-computation-lab-fa-26 and bookmark it!
 - If I am ever going too fast through _any_ material, please interrupt me!
 - Questions? Comments? Needs? Etc? Send an email. I value open communication more than anything else. If you miss class, expect to be late, or are struggling with an assignment, please let me know.
 ### Expectations and Class Manifesto
 
 1. Be curious!
-   - what questions are you asking?
-	   - See [Asking Questions](../readme#asking-questions)
+   - what kind of questions are you asking?
    - what do you not know?
    - how can you find those answers?
      - exploring the p5.js reference is a great past time
