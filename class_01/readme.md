@@ -7,19 +7,21 @@
 3. Introduction Survey
 4. Break
 5. Intro to Coding
-6. Pair Pattern Matching activity
-7. Tutorial: Drawing with p5.js
-8. Demos, Videos, and Useful Links
+6. Tutorial: Drawing with p5.js
+7. Demos, Videos, and Useful Links
 
 ## Syllabus
 
-- Read through the [syllabus](../readme.md): https://github.com/morganmueller/critical-computation-lab-fa-26 and bookmark it!
+<img src="../images/qrcode.png" style="width:600px" />
+
+- Read through the [syllabus](../readme.md): https://github.com/samheckle/critical-computation-lab-fa-26 (and bookmark it! this is also where class notes will live!)
 - If I am ever going too fast through _any_ material, please interrupt me!
 - Questions? Comments? Needs? Etc? Send an email. I value open communication more than anything else. If you miss class, expect to be late, or are struggling with an assignment, please let me know.
 ### Expectations and Class Manifesto
 
 1. Be curious!
-   - what kind of questions are you asking?
+   - what questions are you asking?
+	   - See [Asking Questions](../readme#asking-questions)
    - what do you not know?
    - how can you find those answers?
      - exploring the p5.js reference is a great past time
@@ -92,18 +94,6 @@ Make an account: https://openprocessing.org/join/DC1063
 Bookmark: https://openprocessing.org/class/106677#/
 
 When creating a profile, please use your real (preferred) name. We have a large community of learners and one way we establish trust as a community is through real name usage.
-
-## Pair Pattern Matching (Lost in Translation)
-- Take 5 minutes to draw a simple pattern
-- Take another few minutes to write a set of instructions for how to draw your pattern
-- Be as specific and detailed as you can
-- I will break you into pairs
-- Exchange instructions with your partner
-- Just from the instructions, try to draw your partner’s pattern
-- Compare patterns!
-- How different/similar are they?
-- How could you modify your instructions so that the person drawing the pattern would get closer to your original design?
-
 
 #### First Sketch
 

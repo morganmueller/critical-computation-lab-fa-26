@@ -5,7 +5,7 @@ Adapted from [Critical Computation Syllabus Fall 26](https://docs.google.com/doc
 ---
 ### 19764 | Section B | Swedish Fish
 
-In-Person Meetings: Fridays 4:00-6:40 PM
+In-Person Meetings: Fridays 12:10-2:50 PM
 
 Location 6 E 16th Street, Room 1204B
 
