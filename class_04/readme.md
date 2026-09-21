@@ -234,6 +234,13 @@ function keyPressed(){
 
 ## References, Useful Links, and Demos
 
+In Class Demos
+- [Dice Roller](https://openprocessing.org/@muelm658/3013126)
+- [Bouncing Ball](https://openprocessing.org/@muelm658/3012886)
+- [Random Walker](https://openprocessing.org/@muelm658/3012878)
+- [Feedback](https://openprocessing.org/@muelm658/3012868)
+- [Click/Type](https://openprocessing.org/@muelm658/3012887)
+
 - [2.1 - existing variables in p5](https://www.youtube.com/watch?v=7A5tKW9HGoM&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=8)
 - [2.2 - custom variables in p5](https://www.youtube.com/watch?v=dRhXIIFp-ys&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=9)
 - [2.3 - incrementation operators](https://www.youtube.com/watch?v=T26OJGjI8qI&list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA&index=10)
