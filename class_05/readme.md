@@ -248,6 +248,12 @@ Current time ("real" time)
 ## References, Useful Links, and Demos
 
 ### References
+
+- In Class Demos
+ 	- [Reaction Timer](https://openprocessing.org/@muelm658/3019853)
+ 	- [Rollover Interaction](https://openprocessing.org/@muelm658/3019850)
+  	- [Traffic Light](https://openprocessing.org/@muelm658/3019848)
+  	- [Day to Night](https://openprocessing.org/@muelm658/3019845)
 - Clock/Time Projects:
 	- Fruitful School, [Emoji Clock](https://web.archive.org/web/20201126185008/http://www.fruitful.school/blog/2019-12-23.html)
 	- Jacopo Colo, [Hex Clock](https://www.jacopocolo.com/hexclock/)
