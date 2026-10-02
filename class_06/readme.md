@@ -16,8 +16,8 @@
 | 25 min | Pair programming: refactor with functions, Function Telephone |
 
 ## Upcoming events:
-   	- Saturday 10/3 NYC Processing Community Day: [Schedule](https://www.pcd2026.nyc/) | [Free RSVP](https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336). If you attend, send me an email with things you learned / saw / inspired by from the day and I will give extra credit. 
-   	- Monday 10/5 Volvox Labs Field Trip : [Free RSVP](https://narwhalnation.newschool.edu/event/12776851)
+   - Saturday 10/3 NYC Processing Community Day: [Schedule](https://www.pcd2026.nyc/) | [Free RSVP](https://www.eventbrite.com/e/processing-community-day-2026-nyc-tickets-1995608029336). If you attend, send me an email with things you learned / saw / inspired by from the day and I will give extra credit. 
+   - Monday 10/5 Volvox Labs Field Trip : [Free RSVP](https://narwhalnation.newschool.edu/event/12776851)
 
 ## Assignment #3 share-out (10 min)
 
