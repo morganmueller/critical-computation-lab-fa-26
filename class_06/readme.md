@@ -204,146 +204,39 @@ console.log(area(0, 4));  // 0
 console.log(area(-3, 4)); // -12 — is that a bug? depends on what the function promised
 ```
 
-## Break
+### Exercise: Plant a Garden (solo or pairs)
 
-## Modulo + `for` loop introduction
-
-### Modulo
-
-`%` gives the **remainder** after division. `7 % 3` is `1`, because 3 goes into 7 twice with 1 left over.
-
-Warm-up — no editor:
-
-1. `10 % 3`
-2. `9 % 3`
-3. `4 % 2`
-4. `5 % 2`
-5. `3 % 5`
-
-Two things modulo is good for:
-
-- **Wrapping.** `n % 4` can only ever be 0, 1, 2, or 3, no matter how big `n` gets. You used this last week: `millis() % 6000` is what made the Traffic Light start over.
-- **Every other / every nth.** `n % 2 == 0` is true for even numbers, `n % 3 == 0` for every third.
+Write one function that draws a flower, then use it to fill a garden.
 
 ```js
-let n = floor(frameCount / 30); // counts up forever
+// PLANT A GARDEN
+// Goal: one drawFlower() function, many flowers.
+// Work through the TODOs in order. Run your sketch after each one.
 
-n % 4      // only ever 0, 1, 2, 3
-n % 2 == 0 // true, false, true, false ...
-```
-
-What's the biggest number `n % 4` can ever be? Why never 4?
-
-### `for` loop
-
-Five circles, the copy-paste way:
-
-```js
-circle(50, 100, 40);
-circle(125, 100, 40);
-circle(200, 100, 40);
-circle(275, 100, 40);
-circle(350, 100, 40);
-```
-
-Only `x` changes, and it goes up by 75 each time. A function removes repetition by *naming* it; a loop removes repetition by *counting* it.
-
-```js
-for (let i = 0; i < 5; i++) {
-  circle(50 + i * 75, 100, 40);
-}
-```
-
-Three parts inside the parentheses, separated by semicolons:
-
-| Part | In the example | What it does |
-| --- | --- | --- |
-| start | `let i = 0` | make a counter; runs once |
-| condition | `i < 5` | checked before every pass; when it's false, the loop stops |
-| update | `i++` | runs after every pass; `i++` is short for `i = i + 1` |
-
-Step by step: `i` is 0 → draw at 50. `i` is 1 → draw at 125. … `i` is 4 → draw at 350. `i` is 5 → `5 < 5` is false, stop.
-
-- `i` is a local variable. It only exists inside the loop.
-- The whole loop finishes inside a single frame of `draw()`. It's not animation — all five circles appear at once.
-
-All three of today's ideas together — a loop calling a function, with modulo picking every other one:
-
-```js
-for (let i = 0; i < 6; i++) {
-  if (i % 2 == 0) {
-    drawFace(50 + i * 100, 100, 80);
-  } else {
-    drawFace(50 + i * 100, 100, 40);
-  }
-}
-```
-
-Try it:
-
-- Fit 12 faces across the same canvas.
-- Swap `i % 2` for `i % 3` and predict the pattern before running it.
-
-## Pair programming
-
-### Refactor (pairs, one editor)
-
-Two faces, drawn the copy-paste way:
-
-```js
 function setup() {
-  createCanvas(400, 200);
+  createCanvas(600, 400);
 }
 
 function draw() {
-  background(220);
+  background(200, 230, 255);
 
-  circle(100, 100, 80);
-  circle(80, 92, 10);
-  circle(120, 92, 10);
-  line(87, 116, 113, 116);
+  noStroke();
+  fill(90, 170, 90);
+  rect(0, 300, width, 100); // the ground
 
-  circle(250, 100, 80);
-  circle(230, 92, 10);
-  circle(270, 92, 10);
-  line(237, 116, 263, 116);
+  // TODO 2: call drawFlower() three times, with different arguments
+
 }
+
+// TODO 1: define drawFlower(x, y, size)
+//   - a stem: a line from (x, y) straight down to the ground (y = 300)
+//   - four petals: circles just left, right, above, and below (x, y)
+//   - a center: one circle at (x, y)
+// Nothing in the body should be a fixed position.
+// Work everything out from x, y, and size.
+
 ```
 
-1. Find the repetition. What changes between the two blocks?
-2. Write ONE function, `drawFace(x, y)`, that draws a face.
-3. Replace both blocks with two calls.
-4. Add a third face without typing another `circle()`.
-
-*Stretch:* make the eyes bigger on every face by changing one line. That's "change once, changed everywhere."
-
-## Tutorials
-
-- [p5 Functions vs. User-Defined Functions](https://youtu.be/vPcoVHffsX0)
-- [Argument and Parameters](https://youtu.be/73wLlJFWXQg)
-
-For next week:
-
-- [for Loop](https://youtu.be/QdGeb0H5idM)
-- [Nested for Loops](https://youtu.be/FAVvj1M6klc)
-- [Modulo](https://youtu.be/LMWRkUlhY7s)
-- (Optional) [rotate + for Loop](https://youtu.be/kP-RkS70Lm8)
-- (Optional) [blendMode + Loops](https://youtu.be/NDn7y4nWekE)
-
-## Glossary
-
-| Term | Meaning |
-| --- | --- |
-| function | a named set of instructions you can run again and again |
-| define | write the function: `function name(parameters) { ... }` |
-| call | run the function: `name(arguments);` |
-| parameter | a named placeholder in the definition; a local variable |
-| argument | the actual value passed in a call |
-| `return` | ends the function and hands a value back to the caller |
-| global variable | declared outside any function; lives for the whole program |
-| local variable | declared inside a function; gone when the function finishes |
-| DRY | Don't Repeat Yourself |
-| `%` (modulo) | the remainder after division; wraps a number into a fixed range |
-| `for` loop | repeats a block of code a counted number of times: `for (start; condition; update) { ... }` |
-| `i++` | short for `i = i + 1` |
-| modularity | breaking a problem into small, named, swappable pieces |
+1. **Define it.** Write `drawFlower(x, y, size)` below `draw()`. Hint: the left petal could be `circle(x - size / 2, y, size / 2)`.
+2. **Call it.** Draw three flowers of different sizes in different places. You should not type any new `circle()` lines to do this.
+3. **Add a parameter.** Add a fourth parameter, `petalColor`, and use it in a `fill()` inside the function. Update your three calls so each flower is a different color.
