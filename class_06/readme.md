@@ -365,6 +365,9 @@ function draw() {
 - [p5 Functions vs. User-Defined Functions](https://youtu.be/vPcoVHffsX0)
 - [Argument and Parameters](https://youtu.be/73wLlJFWXQg)
 
+## In Class Example
+- [Plant a Garden](https://openprocessing.org/@muelm658/3030188)
+
 For next week:
 
 - [for Loop](https://youtu.be/QdGeb0H5idM)
