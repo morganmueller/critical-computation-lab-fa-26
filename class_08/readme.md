@@ -50,7 +50,6 @@ Pick **one** and write three or four sentences.
 Anything need to be added to our [critique ground rules](https://cryptpad.fr/doc/#/2/doc/edit/B3C3-Z+7rBZl0vERc2Z628v+/)?
 
 - In groups of 3, share your work, following our [critique structure](https://github.com/samheckle/critical-computation-lab-fa-26/tree/main/class_03#structure-of-critique) for ~15 minutes.
-## Tutorial: Arrays
 
 
 ## Assignment #6 [Part 1] Share-out
