@@ -3,13 +3,14 @@
 ## Agenda
 
 1. [Reading Reflection: Data Feminism](#reading-reflection-data-feminism)
-2. [Assignment #6 [Part 1] Share-out](#assignment-6-part-1-share-out)
-3. [Tutorial: Arrays](#tutorial-arrays)
-4. [Walkthrough: From Numbered List to Data Portrait](#walkthrough-from-numbered-list-to-data-portrait)
-5. [Mini Assignments](#mini-assignments)
-6. [Assignment #6 [Part 2]](#assignment-6-part-2)
-7. [Extra Review Materials](#extra-review-materials)
-8. [Coding Glossary](#coding-glossary)
+2. [Assignemnt #5 Share-out](#assignment-5-part-2-share-out)
+3. [Assignment #6 [Part 1] Share-out](#assignment-6-part-1-share-out)
+4. [Tutorial: Arrays](#tutorial-arrays)
+5. [Walkthrough: From Numbered List to Data Portrait](#walkthrough-from-numbered-list-to-data-portrait)
+6. [Mini Assignments](#mini-assignments)
+7. [Assignment #6 [Part 2]](#assignment-6-part-2)
+8. [Extra Review Materials](#extra-review-materials)
+9. [Coding Glossary](#coding-glossary)
 
 ## Reading Reflection: Data Feminism
 
@@ -44,6 +45,14 @@ Pick **one** and write three or four sentences.
 3. What did your numbered list leave out that you think matters? Could your portrait show that missing part somehow?
 4. A data portrait is about you, made by you. Does that avoid the problems the book describes, or just move them? Who is your audience, and what are you choosing to show them?
 
+## Assignment #5 [Part 2] Share-out
+
+Anything need to be added to our [critique ground rules](https://cryptpad.fr/doc/#/2/doc/edit/B3C3-Z+7rBZl0vERc2Z628v+/)?
+
+- In groups of 3, share your work, following our [critique structure](https://github.com/samheckle/critical-computation-lab-fa-26/tree/main/class_03#structure-of-critique) for ~15 minutes.
+## Tutorial: Arrays
+
+
 ## Assignment #6 [Part 1] Share-out
 
 In groups of 3, each person shares:
@@ -60,6 +69,21 @@ Keep your list open. By the end of the tutorial, you'll turn it into an array.
 ---
 
 ## Tutorial: Arrays
+
+### Coding Glossary: Arrays
+
+| Review         |                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------- |
+| variable       | name for a placeholder piece of data                                                     |
+| declaration    | using `let` to assign a value to a variable or using `function` to create a new function |
+| variable types | `boolean`, `number`, `string` (words)                                                    |
+
+| New terms |                                                                             |
+| --------- | --------------------------------------------------------------------------- |
+| array     | data structure that holds a _series_ of variables, uses `[]`, order matters |
+| element   | one piece of array data                                                     |
+| index     | location of a particular element, starting at index of 0                    |
+| property  | a value we are accessing, using the `.` syntax                              |
 
 ### In Class 8 Practice 1
 
