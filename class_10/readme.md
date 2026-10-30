@@ -28,9 +28,9 @@
 
 ## Class 9
 
-Review [Class 9 Notes](https://github.com/samheckle/critical-computation-lab-fa-26/tree/main/class_09): Objects and Classes
+Review [Class 9 Notes](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_09/readme.md): Objects and Classes
 
-At this point, you should feel pretty comfortable with everything JavaScript related. If you would like review, please see [https://samheckle.github.io/how-to/write-javascript](https://samheckle.github.io/how-to/write-javascript)
+At this point, you should feel pretty comfortable with everything JavaScript related.
 
 [Back to top](#agenda)
 
