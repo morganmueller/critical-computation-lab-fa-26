@@ -91,9 +91,8 @@ Quick pair discussion (5 min), pick one:
 1. Go wash your hands.
 2. Set up your computer to receive feedback:
     - [Option 1] using pen + paper
-    - [Option 2] using the [digital whiteboard](https://www.tldraw.com/f/86lhTImE-Ax-oCWkzJj_z?d=v0.0.708.747.w6tvg5ejxzjasTo6dgqLa)
 
-    ![layout](layout.png)
+    ![layout](images/layout.png)
 
 3. **~5 minutes:**
     - Write the **instructions** for how to interact with your prototype. (Notice which inputs you're assuming: mouse, keyboard, sight, sound.)
