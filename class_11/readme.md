@@ -86,18 +86,17 @@ Quick pair discussion (5 min), pick one:
 
 ---
 
-## Assignment #7 Part 3: Science Fair Feedback
+## Assignment #7 Part 3:
 
-1. Go wash your hands.
-2. Set up your computer to receive feedback:
+1. Set up your computer to receive feedback:
     - [Option 1] using pen + paper
 
     ![layout](images/layout.png)
 
-3. **~5 minutes:**
+2. **~5 minutes:**
     - Write the **instructions** for how to interact with your prototype. (Notice which inputs you're assuming: mouse, keyboard, sight, sound.)
     - Write 2–3 **technical and/or conceptual questions** you need answers for.
-4. **~20 minutes:**
+3. **~20 minutes:**
     - Go around the room science-fair style and see what your peers have made.
     - Write notes of feedback, questions, and confusion.
     - If you can answer any of your peers' questions, note your answers.
