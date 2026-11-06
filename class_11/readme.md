@@ -40,7 +40,7 @@
 
 Responding to your feedback to make this class better!
 
-If there's anything else you'd like addressed, you can always send me an email, book office hours, or fill out the [anonymous feedback form](https://docs.google.com/forms/d/e/1FAIpQLSc8FX_px9x8SS8IUec6-4Gb_RErzMowldphd0jkZOZOCvg6Bw/viewform?usp=dialog).
+If there's anything else you'd like addressed, you can always send me an email, book office hours, or fill out the [anonymous feedback form]
 
 [Back to top](#agenda)
 
