@@ -87,7 +87,7 @@ A text editor is where we write code. It gives us *syntax highlighting* (if some
 
 | Editor | Notes |
 | --- | --- |
-| [**VSCodium**](https://vscodium.com/) | What I use in class. VS Code's open-source code, **without** Microsoft's tracking. Has issues with iCloud folders: keep `cc-lab` outside iCloud Drive. |
+| [**VSCodium**](https://vscodium.com/) | VS Code's open-source code, **without** Microsoft's tracking. Has issues with iCloud folders: keep `cc-lab` outside iCloud Drive. |
 | [VS Code](https://code.visualstudio.com/) | The most common editor. Same as VSCodium, plus Microsoft telemetry and built-in AI features (see the consent note below). |
 | [Sublime Text](https://www.sublimetext.com/) | Fast and lightweight. Free to evaluate (it will occasionally ask you to buy). |
 
