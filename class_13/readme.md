@@ -18,7 +18,7 @@
     - [Breaking the Normal Flow](#breaking-the-normal-flow)
     - [Best Practices](#best-practices)
     - [Livecode: Styling Our Portfolio](#livecode-styling-our-portfolio)
-    - [Pair Exercise: Style Jamie's Page](#pair-exercise-style-jamies-page)
+    - [Pair Exercise: Fix the Stylesheet](#pair-exercise-fix-the-stylesheet)
 6. [Assignment #8 [Part 2]](#assignment-8-part-2)
 7. [Extra Review Materials](#extra-review-materials)
 
@@ -636,7 +636,7 @@ p {
 ```css
 line-height: 1.5;           /* space between lines; 1.4–1.6 is comfortable */
 font-weight: bold;          /* or a number: 400 = normal, 700 = bold */
-text-transform: uppercase;  /* ALL CAPS in style only. Remember Jamie's name last week! */
+text-transform: uppercase;  /* ALL CAPS in style only; keep the HTML in normal case */
 text-decoration: none;      /* removes underlines; keep them on links in paragraphs */
 letter-spacing: 0.05em;
 ```
@@ -807,7 +807,7 @@ What happens when content doesn't fit its box: `visible` (default, spills out), 
 
 ### Livecode: Styling Our Portfolio
 
-We'll take last week's **Ari Rivera** portfolio (unchanged HTML!) and style it step by step. Add one line to its `<head>`:
+We'll take last week's livecode portfolio (unchanged HTML!) and style it step by step. Add one line to its `<head>`:
 
 ```html
 <link rel="stylesheet" href="style.css" />
@@ -987,142 +987,350 @@ footer {
 
 ---
 
-### Pair Exercise: Style Jamie's Page
+### Pair Exercise: Fix the Stylesheet
 
-Start from the **fixed** Jamie Chen page from last week's pair exercise (the solution is in the [Week 12 notes](https://github.com/morganmueller/critical-computation-lab-fa-26/tree/main/class_12)). Work in pairs: one person types, switch every step.
+The HTML below is clean and semantic. The stylesheet has **16 problems**: some styles never load, some fail without an error, and some make the page hard to read or use. Work in pairs to find and fix them.
+
+Take turns: one person uses **Inspect** in the browser, the other edits the code. Switch after each step. Above every fix, write a short comment saying what was wrong: `/* 4: "colour" is not a CSS property */`.
+
+#### Starter files
+
+Make a folder called `fix-the-stylesheet` with these two files. **Name the CSS file `style.css`, all lowercase.**
+
+`index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+      h2 { color: hotpink; }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Your Name</h1>
+      <nav aria-label="main">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#info">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="work">
+        <h2 style="color: hotpink; font-size: 30px;">My Work</h2>
+
+        <article id="project1" class="project featured">
+          <h3>Bubble Garden</h3>
+          <p>
+            A sketch where pale blue bubbles drift up the screen and pop when they
+            touch each other. Built with a Bubble class, an array, and a
+            reduce-motion checkbox. Each bubble leaves a small ring behind when
+            it pops.
+          </p>
+          <p><a href="https://openprocessing.org/sketch/0000004">See Bubble Garden on OpenProcessing</a></p>
+        </article>
+
+        <article id="project2" class="project">
+          <h3>Picking Fruit</h3>
+          <p>
+            A pair project from class: a tree full of fruit emoji and a basket you
+            move with the arrow keys or the on-screen buttons. Catch five lemons
+            and the tree changes seasons.
+          </p>
+          <p><a href="https://openprocessing.org/sketch/0000005">See Picking Fruit on OpenProcessing</a></p>
+        </article>
+      </section>
+
+      <section id="info">
+        <h2 style="color: hotpink; font-size: 30px;">About Me</h2>
+        <p>I like:</p>
+        <ul>
+          <li class="tag">frogs</li>
+          <li class="tag">noodles</li>
+          <li class="tag">code</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Your Name</p>
+    </footer>
+  </body>
+</html>
+```
+
+`style.css`
+```css
+body {
+  font-family: "Comic Neue";
+  font-size: 12px;
+  background-color: white;
+  color: #cccccc
+  line-height: 1.6;
+}
+
+h1 {
+  display: inline-block;
+  color: yellow;
+  animation: wiggle 0.3s infinite;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(-3deg); }
+  50%  { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+nav li {
+  float: left;
+  margin-right: 20px;
+  list-style: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+main {
+  width: 900px;
+}
+
+#project1 {
+  border: 3px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+#project2 {
+  border: 3px solid black;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+}
+
+.project .featured {
+  border-color: hotpink;
+  border-width: 6px;
+}
+
+.project h3 {
+  color: navy;
+}
+
+/* project titles should be pink */
+h3 {
+  color: hotpink;
+}
+
+.tag {
+  background-color: #90ee90;
+  color: white;
+  padding: 4px 12px;
+}
+
+footer {
+  colour: gray;
+  backround-color: rbga(255, 105, 180, 0.2);
+}
+```
 
 #### Steps
 
-1. **Link it.** Create `style.css` and link it in `<head>`. Prove it works: `body { background-color: lightyellow; }`.
-2. **Type selector.** Pick a `font-family` for `body` **with a generic fallback**, and a different one for headings.
-3. **Undo the caps.** Jamie's name was typed in caps last week; we fixed the HTML. Make the `<h1>` *look* uppercase again with CSS only.
-4. **Box model.** Center `main` with `max-width` and `margin: 0 auto`. Give each `<article>` padding, a border, and a margin between them.
-5. **Class selector.** Add `class="tag"` to each `<li>` in the "I like" list. Style `.tag` like a little rounded label (`display: inline-block`, `padding`, `border-radius`, `background-color`).
-6. **Chained class.** Add a second class to one project: `<article class="project featured">`. Write `.project.featured` so the featured one has a thicker, colored border.
-7. **Flex.** Put the nav links in a row with `display: flex` and a `gap`.
-8. **Check.** Run your colors through the [contrast checker](https://webaim.org/resources/contrastchecker/), tab through with the keyboard, and paste your CSS into the [CSS validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
+Open `index.html` in the browser. Work through the steps in order. There are hints below if you get stuck.
+
+1. **Load the stylesheet.** The page isn't using `style.css` at all. Find out why and fix it. (It may work on your laptop and still break on GitHub Pages. Why?)
+2. **Keep styles in one place.** Styles are written in three places. Move everything into `style.css`, then delete the `<style>` tag and every `style=""` attribute.
+3. **Find the ignored lines.** Four things in `style.css` are ignored without an error message. Find them with Inspect (look for ⚠️ and ~~strikethrough~~) or your editor's **Problems** panel.
+4. **Make it readable.** Find **four** text/background pairs that fail 4.5:1 in the [contrast checker](https://webaim.org/resources/contrastchecker/) and fix them. Then fix **two** more problems: how the body text is sized, and what font is used if the web font doesn't load.
+5. **Fix the boxes.** Narrow the browser window to phone width and look at the project cards. Fix three box-model problems. (One of them is a copy-paste.)
+6. **Fix the selectors.** The `h3` rule comes last in the file, so why are the project titles still navy? And why doesn't the featured project get its pink border?
+7. **Lay out the nav.** Replace the floats with flex.
+8. **Respect the visitor.** Fix three things that work against visitors: one animation that never stops, one rule that hides where keyboard users are, and one link that sends every visitor's data to a third party.
 
 *Stretch (pick one):*
 
-- **Dark mode.** Add a `prefers-color-scheme: dark` block.
-- **Sticky header.** Make the header `position: sticky; top: 0;` with a background color.
-- **Font.** Load a font from [fonts.coollabs.io](https://fonts.coollabs.io/) or self-host one with `@font-face`.
-- **Selector game.** Play the first 10 levels of [Flukeout](https://flukeout.github.io/).
+- **Optional motion.** Bring the animation back, but only for visitors who haven't asked their computer to reduce motion, and only for a few repeats.
+- **Dark mode.** Add a `prefers-color-scheme: dark` version that still passes contrast.
+- **Restyle it.** Once all 16 are fixed, give the page your own colors, font, and spacing without introducing new problems.
 
-*Share-out:* one pair projects their page and shows the **Styles** panel in Inspect for one element: which rules won, which were crossed out?
+*Share-out:* each pair says how many problems they fixed. One pair walks through the hardest one with Inspect on the projector.
 
 <details>
-<summary>One possible solution (steps 1–8)</summary>
+<summary>Hints</summary>
 
-Changes to the HTML (steps 5–6 only):
+- **Step 1:** compare the `href` in the `<link>` with the real file name, letter by letter. Macs and Windows usually ignore capital letters in file names; the server behind GitHub Pages doesn't.
+- **Step 2:** the `<style>` tag, plus two `style=""` attributes. When you move them, keep the font size but write it in `rem`.
+- **Step 3:** read the `body` rule slowly, then the `footer` rule. Two are spelling mistakes, one is a misspelled function, and one is punctuation.
+- **Step 4:** after fixing step 3, the body text color changes. Why? Also check the `.tag` colors, the `h1`, and the hotpink headings. For sizing, compare `px` and `rem`. For fonts, what happens if Comic Neue doesn't load?
+- **Step 5:** what happens to text that doesn't fit inside `height: 150px`? What happens to `width: 900px` on a 375px phone? And two ids with identical rules should be…?
+- **Step 6:** `.project h3` is one class + one type; `h3` is one type. Which is more specific? For the border, what's the difference between `.project .featured` and `.project.featured`?
+- **Step 7:** `display: flex` goes on the *parent* of the `<li>`s.
+- **Step 8:** look at `animation`, `outline: none`, and `fonts.googleapis.com`. For the font, swap the address for [fonts.coollabs.io](https://fonts.coollabs.io/).
+
+</details>
+
+<details>
+<summary>Solution: all 16 problems</summary>
+
+| # | Problem | Where | Fix |
+| --- | --- | --- | --- |
+| 1 | Stylesheet link uses the wrong case (`Style.css`) | `<head>` | `href="style.css"` |
+| 2 | Styles in a `<style>` tag and `style=""` attributes | `<head>`, both `h2`s | move to `style.css`, delete the rest |
+| 3 | Missing `;` after `color: #cccccc` | `body` | add `;` (the broken line also hid `line-height`) |
+| 4 | Three typos: `colour`, `backround-color`, `rbga` | `footer` | `color`, `background-color`, `rgba` |
+| 5 | Four color pairs fail contrast: grey body text, yellow `h1`, hotpink headings, white on light green | throughout | darker text; yellow moves to a *background*; deeper pink; dark green tags |
+| 6 | Body text at `12px` ignores the visitor's size setting | `body` | `font-size: 1rem` |
+| 7 | No generic fallback font | `body` | `"Comic Neue", "Comic Sans MS", sans-serif` |
+| 8 | Google Fonts sends every visitor's IP address to Google | `<head>` | load from `api.fonts.coollabs.io` (or self-host) |
+| 9 | Animation repeats forever, with no reduced-motion option | `h1` | remove it, or wrap it in `prefers-reduced-motion: no-preference` and limit the repeats |
+| 10 | `outline: none` hides keyboard focus | `a:focus` | `a:focus-visible` with a visible outline |
+| 11 | Copy-pasted rules on `#project1` and `#project2` | cards | one `.project` rule; delete the ids |
+| 12 | `height: 150px` makes text spill out of the cards | cards | delete `height` |
+| 13 | `width: 900px` scrolls sideways on phones | `main` | `max-width` + `margin: 0 auto` |
+| 14 | Floated nav | `nav li` | `display: flex` on `nav ul` |
+| 15 | `.project .featured` (with a space) matches nothing | featured card | `.project.featured` |
+| 16 | `h3` loses to the more specific `.project h3` | project titles | change the color in `.project h3` (or delete it) |
+
+Fixed `<head>`:
 
 ```html
-<article class="project featured">
-  <h3>Bubble Garden</h3>
-  ...
-</article>
-
-<article class="project">
-  <h3>Picking Fruit</h3>
-  ...
-</article>
-
-...
-
-<ul>
-  <li class="tag">frogs</li>
-  <li class="tag">noodles</li>
-  <li class="tag">code</li>
-</ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <!-- 8: same font, no tracking -->
+  <link rel="stylesheet" href="https://api.fonts.coollabs.io/css2?family=Comic+Neue&display=swap">
+  <!-- 1: lowercase, to match the real file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- 2: <style> tag deleted -->
+</head>
 ```
 
-`style.css`:
+In the body, delete both `style="..."` attributes and both `id="project1"` / `id="project2"`.
+
+Fixed `style.css`:
 
 ```css
 * {
   box-sizing: border-box;
 }
 
-/* step 1 + 2 */
 body {
-  background-color: lightyellow;
-  color: #222;
-  font-family: Verdana, sans-serif;
+  font-family: "Comic Neue", "Comic Sans MS", sans-serif; /* 7 */
+  font-size: 1rem;           /* 6 */
+  background-color: white;
+  color: #333333;            /* 3 + 5 */
   line-height: 1.6;
   margin: 0;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Courier New", monospace;
-}
-
-/* step 3: caps in CSS, not in the HTML */
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* step 4 */
+/* 13: a column that fits any screen */
 header,
 main {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-article {
-  background-color: white;
-  border: 2px solid #222;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* step 5 */
-.tag {
+/* 5: yellow is now a highlight behind dark text */
+h1 {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  background-color: #2e7d32;
-  color: white;
+  color: #222222;
+  background-color: yellow;
+  padding: 0 0.5rem;
 }
 
-section ul {
-  list-style: none;
-  padding: 0;
+/* 9: only animate for visitors who haven't asked for less motion, and only 3 times */
+@media (prefers-reduced-motion: no-preference) {
+  h1 {
+    animation: wiggle 0.6s ease-in-out 3;
+  }
 }
 
-/* step 6 */
-.project.featured {
-  border: 5px solid #d81b60;
+@keyframes wiggle {
+  0%   { transform: rotate(-3deg); }
+  50%  { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
 }
 
-/* step 7 */
+/* 2 + 5 + 6: moved from the HTML, darker pink, rem */
+h2 {
+  color: #c2185b;
+  font-size: 1.875rem;
+}
+
+/* 14 */
 nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   list-style: none;
   padding: 0;
 }
 
+/* 10 */
 a:focus-visible {
-  outline: 3px solid #d81b60;
+  outline: 3px solid #c2185b;
   outline-offset: 2px;
+}
+
+/* 11 + 12: one class, no fixed height */
+.project {
+  border: 3px solid black;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* 15: no space = both classes on one element */
+.project.featured {
+  border-color: #c2185b;
+  border-width: 6px;
+}
+
+/* 16: change the rule that was actually winning */
+.project h3 {
+  color: #c2185b;
+}
+
+/* 5: white on dark green passes */
+.tag {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+#info ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 4 */
+footer {
+  color: #555555;
+  background-color: rgba(255, 105, 180, 0.2);
+  text-align: center;
+  padding: 1rem;
 }
 ```
 
 Notes:
 
-- `text-transform: uppercase` changes the *look*; a screen reader still reads "Jamie Chen" as a name instead of spelling it out.
-- `.project.featured` (no space) matches the one article with both classes. `.project .featured` (space) would match nothing here.
-- White on `#2e7d32` green passes 4.5:1; white on `lightgreen` would not.
-- `section ul` (descendant selector) removes bullets only from lists inside a `<section>`, so the nav and other lists aren't affected by accident.
+- **Problem 3 hides problem 5.** `color: #cccccc line-height: 1.6;` is read as one invalid value, so the browser drops *both* declarations and the text falls back to black. Add the semicolon and the text turns light grey, revealing a contrast problem.
+- **Problem 1 only shows up online.** Macs and Windows usually don't care about capital letters in file names, but the server behind GitHub Pages does. Use lowercase names everywhere.
+- **Problem 16 is about specificity, not order.** "Later wins" only breaks ties. `.project h3` (class + type) beats `h3` (type) no matter where it sits in the file.
+- **hotpink fails too:** `#ff69b4` on white is about 2.6:1. `#c2185b` is still pink and passes (about 5.9:1).
+- **`animation` and `@keyframes`** are new: `@keyframes` names the steps of a movement, and `animation` plays it (name, duration, timing, number of repeats). Wrapping it in `prefers-reduced-motion: no-preference` means visitors who have asked for less motion never see it.
 
 </details>
 
@@ -1169,6 +1377,6 @@ Submit **your live GitHub Pages URL** and your reflection to the CC Lab Canvas a
 - WebAIM: [Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - W3C: [CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
 - Una Lee & Dave Tolliver: [Building Consentful Tech zine](https://www.andalsotoo.net/wp-content/uploads/2018/10/Building-Consentful-Tech-Zine-SPREADS.pdf)
-- [Class 12 Notes](https://github.com/morganmueller/critical-computation-lab-fa-26/tree/main/class_12): HTML structure, semantic HTML, the Jamie and Ari pages
+- [Class 12 Notes](https://github.com/morganmueller/critical-computation-lab-fa-26/tree/main/class_12): HTML structure, semantic HTML, last week's livecode portfolio
 
 [Back to top](#agenda)
