@@ -6,6 +6,9 @@
 2. [Assignment #8 Part 1: Questions](#assignment-8-part-1-questions)
 3. [Reading Discussion: Consentful Tech](#reading-discussion-consentful-tech)
 4. [Review: Tools](#review-tools)
+    - [Text Editor: VS Code / VSCodium](#text-editor-vs-code--vscodium)
+    - [Browser](#browser)
+    - [GitHub](#github)
 5. [Tutorial: Introduction to CSS](#tutorial-introduction-to-css)
     - [What is CSS?](#what-is-css)
     - [Three Ways to Add CSS](#three-ways-to-add-css)
@@ -42,6 +45,7 @@
 | cascade | when two rules disagree, the more specific (or later) one wins |
 | box model | every element is a box: content + padding + border + margin |
 | generic family | a fallback font type: `serif`, `sans-serif`, `monospace` |
+| Emmet | editor shortcuts that expand short abbreviations into full code (`!` + Tab) |
 
 ---
 
@@ -69,7 +73,7 @@ Reading: [Building Consentful Tech](https://www.andalsotoo.net/wp-content/upload
 - Or look for a folder called `OptGuideOnDeviceModel` in Chrome's profile folder.
 - Talk it over: were you asked? Could you say no? Using the zine's FRIES (Freely given, Reversible, Informed, Enthusiastic, Specific), which parts of consent are missing?
 
-**Keep this in mind while you write CSS:** your own styling choices can be consentful or not. We'll see this with fonts (tracking) and with motion and color preferences (respecting what the visitor already told their computer).
+**Keep this in mind while you set up your tools and write CSS:** your text editor and your styling choices can be consentful or not. We'll see this with editor telemetry, fonts (tracking), and motion and color preferences (respecting what the visitor already told their computer).
 
 [Back to top](#agenda)
 
@@ -77,9 +81,137 @@ Reading: [Building Consentful Tech](https://www.andalsotoo.net/wp-content/upload
 
 ## Review: Tools
 
-### Text Editor
+### Text Editor: VS Code / VSCodium
 
-From now on, open **Sublime Text** (or any text editor) with your `cc-lab` folder open. A text editor gives us *syntax highlighting*: if something is a strange color, it's probably a typo.
+A text editor is where we write code. It gives us *syntax highlighting* (if something is a strange color, it's probably a typo), autocomplete, and shortcuts that type the boring parts for us.
+
+| Editor | Notes |
+| --- | --- |
+| [**VSCodium**](https://vscodium.com/) | What I use in class. VS Code's open-source code, **without** Microsoft's tracking. Has issues with iCloud folders: keep `cc-lab` outside iCloud Drive. |
+| [VS Code](https://code.visualstudio.com/) | The most common editor. Same as VSCodium, plus Microsoft telemetry and built-in AI features (see the consent note below). |
+| [Sublime Text](https://www.sublimetext.com/) | Fast and lightweight. Free to evaluate (it will occasionally ask you to buy). |
+
+Everything below is written for VS Code / VSCodium; they look and work the same. Sublime notes are at the end.
+
+![The VS Code window with six labeled parts: 1 activity bar, 2 explorer showing the cc-lab folder, 3 tabs, 4 the editor with style.css open, 5 the terminal panel, 6 the status bar.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/vscode-layout.png?raw=true)
+
+| # | Part | What it's for |
+| --- | --- | --- |
+| 1 | **Activity bar** | switch the sidebar: files, search, git, extensions |
+| 2 | **Explorer** | every file in your open folder. Right-click for New File / New Folder / Rename. |
+| 3 | **Tabs** | open files. A **●** instead of **×** means *unsaved changes*. |
+| 4 | **Editor** | where you type. Line numbers help when the validator says "error on line 42." |
+| 5 | **Panel** | the terminal and the **Problems** list (errors and warnings) |
+| 6 | **Status bar** | cursor position, indentation, and the file's language (`HTML`, `CSS`) |
+
+#### First-time setup
+
+1. **Open the folder, not a file.** **File → Open Folder…** → choose `cc-lab`. (Mac shortcut: drag the `cc-lab` folder onto the VSCodium icon.) If the Explorer is empty or you can't see your other files, you opened a single file.
+2. **Turn on Auto Save:** **File → Auto Save**. No more "why didn't my change show up?"
+3. **Trust the folder** if asked ("Do you trust the authors of the files in this folder?" → Yes, it's yours).
+4. **Optional, Format on Save:** open Settings (**⌘ ,** / **Ctrl ,**), search `format on save`, and tick the box. Your indentation fixes itself every time you save.
+
+#### Making files
+
+- In the Explorer, hover over `cc-lab` and click the **New File** icon, or right-click a folder → **New File…**
+- Type the full name **with the extension**: `style.css`, `about.html`. The extension tells the editor which language it is (check the status bar).
+- To make a file inside a folder in one step, type the path: `assignment-8/style.css`.
+- **Lowercase, no spaces.** `about-me.html`, not `About Me.html`.
+
+> **Windows:** File Explorer hides extensions by default, so `style.css` can quietly become `style.css.txt`. Always create files from inside your editor, or turn on **View → Show → File name extensions**.
+
+#### Emmet: type less
+
+Emmet is built into VS Code and VSCodium. Type an abbreviation and press **Tab** (or **Enter** when the suggestion pops up).
+
+In an `.html` file:
+
+| Type | Get |
+| --- | --- |
+| `!` | the full HTML skeleton (`<!DOCTYPE html>`, `<head>`, `<body>`…) |
+| `link:css` | `<link rel="stylesheet" href="style.css">` |
+| `p` | `<p></p>` with your cursor inside |
+| `.project` | `<div class="project"></div>` |
+| `article.project` | `<article class="project"></article>` |
+| `h1#logo` | `<h1 id="logo"></h1>` |
+| `ul>li*3` | a list with three items |
+| `a:mail` | `<a href="mailto:"></a>` |
+
+In a `.css` file:
+
+| Type | Get |
+| --- | --- |
+| `m10` | `margin: 10px;` |
+| `p20` | `padding: 20px;` |
+| `w100p` | `width: 100%;` |
+| `ta` | `text-align: left;` (then change the value) |
+
+Notice the pattern: `.` means class, `#` means id, the same as CSS selectors.
+
+#### Helpers while writing CSS
+
+- **Autocomplete:** start typing a property (`back…`) and pick from the list. Press **Ctrl + Space** to bring the list back.
+- **Color swatches:** every color value gets a small square next to it. **Click the square** for a color picker; it can switch between hex, `rgb()` and others.
+- **Hover for docs:** hover over any property or selector to see what it does, with a link to MDN.
+- **Red squiggles:** a missing `;` or `}` gets underlined. Open the **Problems** panel (**⇧⌘M** / **Ctrl+Shift+M**) to see every error in the folder.
+- **Go to file:** **⌘P** / **Ctrl+P**, type part of a file name, Enter.
+
+#### Keyboard shortcuts
+
+| Action | Mac | Windows |
+| --- | --- | --- |
+| Save | ⌘S | Ctrl+S |
+| Comment / uncomment line | ⌘/ | Ctrl+/ |
+| Undo / redo | ⌘Z / ⇧⌘Z | Ctrl+Z / Ctrl+Y |
+| Open any file in the folder | ⌘P | Ctrl+P |
+| Command Palette (search every command) | ⇧⌘P | Ctrl+Shift+P |
+| Find / find in whole folder | ⌘F / ⇧⌘F | Ctrl+F / Ctrl+Shift+F |
+| Format document (fix indentation) | ⇧⌥F | Shift+Alt+F |
+| Indent / un-indent selection | Tab / ⇧Tab | Tab / Shift+Tab |
+| Move line up / down | ⌥↑ / ⌥↓ | Alt+↑ / Alt+↓ |
+| Copy line down | ⇧⌥↓ | Shift+Alt+↓ |
+| Select next match (edit many at once) | ⌘D | Ctrl+D |
+| Add a cursor anywhere | ⌥ click | Alt click |
+| Show / hide sidebar | ⌘B | Ctrl+B |
+| Show / hide terminal | ⌃\` | Ctrl+\` |
+
+**Try it:** in your CSS, put your cursor on a color like `#8a2be2` and press **⌘D** a few times. Every match gets its own cursor; type a new color to change them all at once.
+
+#### Extension: Live Server (auto-refresh)
+
+Dragging files into the browser works, but you have to refresh after every save. **Live Server** refreshes for you.
+
+1. Click the **Extensions** icon in the activity bar (four squares).
+2. Search **Live Server** (by Ritwick Dey) and click **Install**. (In VSCodium the extension store is [Open VSX](https://open-vsx.org/); same name.)
+3. Open your `index.html` and click **Go Live** in the status bar (or right-click the file → **Open with Live Server**).
+4. Your page opens at an address like `http://127.0.0.1:5500/...`. Save a change; the browser updates on its own.
+
+Live Server runs a small web server on *your* computer, so links that start with `/` work too. Nobody else can see it. Click **Port: 5500** in the status bar to stop it.
+
+> Extensions are code written by strangers that runs on your computer. Before installing one, check the publisher, the install count, and what it asks to access. Install only what you need.
+
+#### Consent note: what is your editor sending?
+
+VS Code sends **usage data ("telemetry") to Microsoft by default**, and recent versions ship with AI chat and autocomplete features built in. To turn telemetry off: Settings → search `telemetry` → set **Telemetry Level** to `off`. Search Settings for `AI` to see which AI features are on.
+
+VSCodium is the same editor with telemetry switched off by default. Connect this to FRIES: was the default *freely given* and *informed*?
+
+#### Common editor problems
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Changes don't show in the browser | file not saved (● on the tab) | ⌘S / Ctrl+S, or turn on Auto Save |
+| The Explorer is empty | you opened a file, not the folder | File → Open Folder → `cc-lab` |
+| No syntax colors, no Emmet | file has no extension, or a wrong one | rename it to end in `.html` / `.css`; check the status bar |
+| CSS doesn't apply at all | the `<link>` `href` points to the wrong place | hover the path in the editor; check spelling, capitals, and folder |
+| You're editing the "wrong" `index.html` | a second copy in Downloads or on the Desktop | right-click the tab → **Reveal in Finder / File Explorer** |
+
+#### Using Sublime Text instead?
+
+- **Open the folder:** File → Open… → `cc-lab` (Mac) or Project → Add Folder to Project (Windows).
+- Most shortcuts are the same: ⌘S, ⌘/, ⌘P (go to file), ⇧⌘P (command palette), ⌘D (select next match).
+- **Emmet isn't built in.** ⇧⌘P → *Install Package Control* → ⇧⌘P → *Package Control: Install Package* → **Emmet**.
+- No Live Server: save, then refresh the browser.
 
 ### Browser
 
@@ -87,9 +219,9 @@ Keep a browser open next to your editor. Firefox and Chrome both work. If you us
 
 #### Viewing HTML files
 
-Find your `.html` file on your computer and drag it into a browser window. After every save, **refresh** the browser to see the change.
+Find your `.html` file on your computer and drag it into a browser window (or use Live Server, above). Without Live Server, **refresh** the browser after every save.
 
-![drag an html file into the browser](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/finder_drag.gif?raw=true)
+![Dragging an html file from Finder into a browser window.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/finder_drag.gif?raw=true)
 
 ### GitHub
 
@@ -127,6 +259,8 @@ CSS is written as a list of **rules**. Each rule has three parts:
 - `selector`: which element(s) get styled
 - `property`: what part of the element changes (text color, background, spacing...)
 - `value`: what the property changes to
+
+![A CSS rule, p { color: red; }, with labels pointing to the selector p, the opening and closing braces, the property color, the colon, the value red, and the semicolon.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-rule-anatomy.png?raw=true)
 
 ```css
 selector {
@@ -200,6 +334,8 @@ Better, but the styles only work on this one page.
 
 Same as Option #2, except the CSS lives in its own file. Every page on your site can share it.
 
+![index.html and about.html each contain a link tag pointing to the same style.css file.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-link-stylesheet.png?raw=true)
+
 Create `style.css` next to your `index.html`:
 
 ```css
@@ -208,7 +344,7 @@ p {
 }
 ```
 
-Then link it inside `<head>` with a `<link>` tag:
+Then link it inside `<head>` with a `<link>` tag (Emmet shortcut: `link:css` + Tab):
 
 ```html
 <html>
@@ -257,6 +393,8 @@ If your folder names don't match, that's fine, **as long as there are no spaces*
 ### Selectors
 
 The selector is *which thing on the page* you're grabbing. Three basic kinds:
+
+![The same page shown three times. p { } highlights every paragraph; .project { } highlights the two articles with class project; #logo { } highlights only the h1 with id logo.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-selectors.png?raw=true)
 
 | Selector | Syntax | Selects |
 | --- | --- | --- |
@@ -347,6 +485,8 @@ In `index.html`
 
 When two rules set the same property on the same element:
 
+![Four bars of rising height: type selector p (weakest), class selector .intro, id selector #welcome, and the style attribute (strongest).](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-cascade.png?raw=true)
+
 1. **More specific wins:** `#id` beats `.class`, and `.class` beats `p`.
 2. **If they're equally specific, the later one wins** (lower in the file).
 3. A `style=""` attribute beats your stylesheet.
@@ -371,6 +511,8 @@ p { color: black; }
 
 [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color) sets the **text** color. We'll write colors three ways:
 
+![The same red written as red, #ff0000 and rgb(255, 0, 0); the hex code split into ff red, 00 green, 00 blue; and five red swatches fading from alpha 1 to alpha 0 over a checkerboard.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-color-formats.png?raw=true)
+
 | Format | Example | Notes |
 | --- | --- | --- |
 | named | `red`, `lightseagreen`, `transparent` | case-insensitive; names are a bit random |
@@ -384,7 +526,7 @@ color: #ff0000;               /* hex */
 /* all three are the same red */
 ```
 
-> CSS **silently ignores** anything it doesn't understand. Misspell a color (`rbga`, `#ff00`, `lightgrean`) and nothing happens: no error message. Check Inspect for a crossed-out or warning ⚠️ rule.
+> CSS **silently ignores** anything it doesn't understand. Misspell a color (`rbga`, `#ff00`, `lightgrean`) and nothing happens: no error message. Check Inspect for a crossed-out or warning ⚠️ rule. In your editor, a missing color swatch is another clue.
 
 #### Background color
 
@@ -399,7 +541,13 @@ background-color: rgb(255, 255, 128);       /* rgb, fully opaque */
 background-color: rgba(117, 190, 218, 0.5); /* rgb, 50% transparent */
 ```
 
-> **Contrast:** light grey text on white looks elegant and is unreadable for many people. Check every text/background pair with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) and aim for **4.5:1** or higher.
+#### Contrast
+
+Light grey text on white looks elegant and is unreadable for many people. Check every text/background pair with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) and aim for **4.5:1** or higher.
+
+![Six "Readable?" samples. Passing: near-black on white 21:1, white on dark green 5.1:1, grey #767676 on white 4.5:1. Failing: light grey on white 2.3:1, white on light green 1.4:1, red on blue 2.1:1.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-contrast.png?raw=true)
+
+Notice red on blue: two strong colors, and it still fails. Contrast is about *lightness*, not how bright or bold the colors feel.
 
 #### Width & height
 
@@ -434,6 +582,8 @@ p    { font-size: 1rem; }
 > **Consentful type:** people with low vision raise their browser's default font size. `rem` respects that choice; a fixed `px` size on body text overrides it.
 
 [`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family) is a **priority list** of fonts, separated by commas. The browser uses the first one it has. **Always end with a generic family** as a fallback.
+
+![Serif, sans-serif and monospace samples side by side, and a fallback chain: "My Font" not installed, Helvetica not on this computer, sans-serif always exists and is used.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-font-families.png?raw=true)
 
 ```css
 h1 {
@@ -499,17 +649,7 @@ letter-spacing: 0.05em;
 
 Every element on the page is a rectangle made of four layers:
 
-```
-┌───────────────────── margin ─────────────────────┐
-│  ┌────────────────── border ──────────────────┐  │
-│  │  ┌─────────────── padding ──────────────┐  │  │
-│  │  │                                      │  │  │
-│  │  │     content  (width × height)        │  │  │
-│  │  │                                      │  │  │
-│  │  └──────────────────────────────────────┘  │  │
-│  └────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────┘
-```
+![Nested boxes: an outer dashed margin, then the border, then padding, then the content area labeled width × height.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-box-model.png?raw=true)
 
 **Try it:** Inspect any element and open the *Layout* / *Computed* tab. You'll see this exact diagram with real numbers.
 
@@ -532,9 +672,13 @@ By default, `width` only measures the content. So the total width is:
 }
 ```
 
+![The same CSS (width 200px, padding 20px, border 10px) drawn twice. With content-box the box is 260px wide on screen; with border-box it is 200px and the content shrinks to 140px.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-box-sizing.png?raw=true)
+
 #### Shorthand: one to four values
 
 `margin` and `padding` read **clockwise from the top**: top, right, bottom, left.
+
+![A box with arrows going clockwise: 1 top, 2 right, 3 bottom, 4 left, next to examples of padding with one, two, three and four values.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-shorthand.png?raw=true)
 
 ```css
 padding: 20px;               /* all four sides */
@@ -571,7 +715,7 @@ Last week: HTML stacks **block** elements top to bottom and lines up **inline** 
 
 #### `display`
 
-![block vs inline](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/block.png?raw=true)
+![Four panels. block: three divs stacked at full width. inline: a, em and span tags flowing inside a sentence. inline-block: boxes of different sizes sitting in a line of text. flex: three links in a row inside a nav.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-display.png?raw=true)
 
 | Value | Does |
 | --- | --- |
@@ -584,6 +728,8 @@ Last week: HTML stacks **block** elements top to bottom and lines up **inline** 
 #### `display: flex`
 
 The tool you'll use most for layout: put it on the **parent**, and the children line up.
+
+![Five rows of three numbered boxes inside a dashed parent, showing justify-content flex-start, center, flex-end, space-between and space-around along the main axis.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-flexbox.png?raw=true)
 
 ```css
 nav ul {
@@ -600,7 +746,7 @@ Keep this open: [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com
 
 #### `position`
 
-![position](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/position.png?raw=true)
+![Five mini pages. static: a highlighted box in normal flow. relative: the box nudged away from a dashed outline of its old spot. absolute: the box in the corner of a dashed parent. fixed: a chat button stuck to the window. sticky: a nav stuck to the top.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-position.png?raw=true)
 
 | Value | Does |
 | --- | --- |
@@ -612,13 +758,13 @@ Keep this open: [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com
 
 #### `float`
 
-![float](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/float.png?raw=true)
+![An image floated left with text lines wrapping on its right, and an image floated right with text wrapping on its left.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-float.png?raw=true)
 
 `float: left` / `right` / `none` pushes an element to one side and lets text wrap around it, like an image in a magazine. Use it for that; use flex for layout.
 
 #### `overflow`
 
-![overflow](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/overflow.png?raw=true)
+![Four boxes too small for their text. visible: the lines spill out below. hidden: the extra lines are cut off. scroll and auto: a scrollbar appears.](https://github.com/morganmueller/critical-computation-lab-fa-26/blob/main/class_13/images/css-overflow.png?raw=true)
 
 What happens when content doesn't fit its box: `visible` (default, spills out), `hidden` (cut off), `scroll` (always scrollbars), `auto` (scrollbars only when needed).
 
@@ -653,7 +799,7 @@ What happens when content doesn't fit its box: `visible` (default, spills out), 
    }
    ```
 8. **No tracking fonts or scripts** you didn't choose. Self-host fonts or use coollabs.
-9. **Indent, comment, and validate** with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
+9. **Indent, comment, and validate.** Format Document (⇧⌥F / Shift+Alt+F) fixes indentation; the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) finds errors.
 
 [Back to top](#agenda)
 
@@ -670,14 +816,14 @@ We'll take last week's **Ari Rivera** portfolio (unchanged HTML!) and style it s
 | Concept | Where it shows up |
 | --- | --- |
 | external stylesheet | `<link rel="stylesheet">` |
-| type / class / id / descendant selectors | `body`, `.card`, `#projects`, `nav a` |
-| color & contrast | custom properties at the top, checked with WebAIM |
+| type / id / descendant selectors | `body`, `article`, `#contact ul`, `nav a` |
+| color & contrast | hex colors, checked with WebAIM |
 | typography | `font-family` with fallbacks, `rem` sizes, `line-height` |
 | box model | `box-sizing`, `padding`, `border`, `margin: 0 auto` |
 | flex | the nav and the contact list |
 | consentful CSS | `:focus-visible`, `prefers-color-scheme`, `prefers-reduced-motion` |
 
-Live, we'll add one section at a time and refresh after each. Full file for checking your work:
+Live, we'll add one section at a time and refresh after each (or let Live Server do it). Full file for checking your work:
 
 ```css
 /* ===== 1. Reset the box model ===== */
@@ -831,6 +977,7 @@ footer {
 
 - Comment out section 1 (`box-sizing`). Inspect an `<article>`. What changed in the box model diagram?
 - Swap the order of the `h1, h2, h3` rule and the `h1` rule. Does anything change? Why or why not?
+- Click the color swatch next to `#8a2be2` in your editor and pick a new link color. Use **⌘D** / **Ctrl+D** to change every copy at once.
 - Change `color` on `a` to `#c9a0ff` in light mode. Run it through the contrast checker. Pass or fail?
 - Turn your computer to dark mode (Mac: System Settings → Appearance). Refresh.
 - Tab through the page with the keyboard. Can you always see where you are?
@@ -1018,6 +1165,7 @@ Submit **your live GitHub Pages URL** and your reflection to the CC Lab Canvas a
 - [Flukeout](https://flukeout.github.io/): a game for learning selectors
 - [Flexbox Froggy](https://flexboxfroggy.com/): a game for learning flex
 - Tania Rascia: [A Complete Guide to CSS Concepts](https://www.taniarascia.com/overview-of-css-concepts/)
+- VS Code docs: [Emmet in VS Code](https://code.visualstudio.com/docs/languages/emmet) and [keyboard shortcuts for macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf) / [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 - WebAIM: [Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - W3C: [CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
 - Una Lee & Dave Tolliver: [Building Consentful Tech zine](https://www.andalsotoo.net/wp-content/uploads/2018/10/Building-Consentful-Tech-Zine-SPREADS.pdf)
